@@ -12,6 +12,6 @@ Sphinx / RTD / Restructured text
 
 `Symboles Latex <https://www.cmor-faculty.rice.edu/~heinken/latex/symbols.pdf>`_
 
-`Expressions régulières <https://regexr.com/>`
+`Expressions régulières <https://regexr.com/>`_
 
-`Documentation Sphinx coderefinery <https://coderefinery.github.io/documentation/>`
+`Documentation Sphinx coderefinery <https://coderefinery.github.io/documentation/>`_
