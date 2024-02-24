@@ -1,5 +1,9 @@
 {
     "conventionalCommits.scopes": [
-        "index"
+        "index",
+        "bases",
+        "donnees_modeles",
+        "ia_pratique",
+        "liens_utiles"
     ]
 }
