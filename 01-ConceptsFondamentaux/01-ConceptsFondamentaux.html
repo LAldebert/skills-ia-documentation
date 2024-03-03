@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concepts fondamentaux et histoire des réseaux de neurones &mdash; Documentation Formation Fidle CNRS 0.1</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=af8511e3"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=d99ca74e"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="L’enfer des données, des modèles et des représentations…" href="../02-Donnees/02-Donnees.html" />
+    <link rel="prev" title="Formation IA Fidle CNRS !" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Formation Fidle CNRS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Concepts fondamentaux et histoire des réseaux de neurones</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#deep-learning-kesako">Deep Learning : Kesako ?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#un-nouveau-paradigme">Un nouveau paradigme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#types-d-apprentissage-machine">Types d’apprentissage machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#outils">Outils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#de-la-regression-lineaire-au-neurone-artificielle">De la régression linéaire au neurone artificielle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#complexite-de-la-regression-lineaire-et-approche-iterative">Complexité de la régression linéaire et approche itérative</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#regression-polynomiale-underfitting-et-overfitting">Régression polynomiale, underfitting et overfitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#neurone-artificiel">Neurone artificiel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#histoire-de-l-intelligence-artificielle">Histoire de l’intelligence artificielle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#definition-de-l-intelligence-artificielle">Définition de l’intelligence artificielle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connexionisme-vs-symbolisme">Connexionisme vs Symbolisme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Histoire de l’intelligence artificielle</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../02-Donnees/02-Donnees.html">L’enfer des données, des modèles et des représentations…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-Demos/03-Demos.html">L’IA en pratique, démonstrations et illustrations !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../99-LiensUtiles/99-LiensUtiles.html">Liens externes utiles</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Formation Fidle CNRS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Concepts fondamentaux et histoire des réseaux de neurones</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/01-ConceptsFondamentaux/01-ConceptsFondamentaux.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="concepts-fondamentaux-et-histoire-des-reseaux-de-neurones">
+<h1>Concepts fondamentaux et histoire des réseaux de neurones<a class="headerlink" href="#concepts-fondamentaux-et-histoire-des-reseaux-de-neurones" title="Link to this heading"></a></h1>
+<section id="deep-learning-kesako">
+<h2>Deep Learning : Kesako ?<a class="headerlink" href="#deep-learning-kesako" title="Link to this heading"></a></h2>
+<section id="un-nouveau-paradigme">
+<h3>Un nouveau paradigme<a class="headerlink" href="#un-nouveau-paradigme" title="Link to this heading"></a></h3>
+<p>Certains problèmes peuvent être complexes à résoudre selon des approches classiques pilotées par des modèles / des équations.</p>
+<p>Apparaît dans la 2ème moitié du XXème siècle un nouveau paradigme d’approche piloté par les données.</p>
+<a class="reference internal image-reference" href="../_images/ScientificParadigms.png"><img alt="Paradigmes Scientifiques" src="../_images/ScientificParadigms.png" style="width: 400px;" /></a>
+<p>A noter que l’IA ne se limite pas au machine learning, qui lui même ne se limite pas au Deep Learning. A date cependant, on peut constater la répartition suivante :</p>
+<a class="reference internal image-reference" href="../_images/IA-ML-DL.png"><img alt="Paradigmes Scientifiques" src="../_images/IA-ML-DL.png" style="width: 400px;" /></a>
+<p>Peut être considéré comme intelligence artificielle ne correspond pas à du machine learning un logiciel de planification des personnels navigants dans l’aviation civile.
+La « recherche opérationnelle » rentre dans cette catégorie, pas mal aboutie semble t il dans les années 80 90, encore largement utilisée semble t il.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Continuer à se renseigner sur ces derniers éléments.</p>
+</div>
+</section>
+<section id="types-d-apprentissage-machine">
+<h3>Types d’apprentissage machine<a class="headerlink" href="#types-d-apprentissage-machine" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="../_images/TypesApprentissage.png"><img alt="Paradigmes Scientifiques" src="../_images/TypesApprentissage.png" style="width: 400px;" /></a>
+<p>L” <em>« apprentissage supervisé »</em> est réalisé à partir de données labelisées.</p>
+<ul class="simple">
+<li><p>Est par exemple possible de faire apprendre à un réseau de neurones à reconnaitre un animal sur des photos, auquel cas on est dans un cas de classification.</p></li>
+<li><p>Est aussi possible d’essayer de prédire le prix d’un logement à partir de données labelisées. On est alors dans le cas d’une régression.</p></li>
+</ul>
+<p>L” <em>« apprentissage auto supervisé »</em> consiste à labeliser un petite partie des données, de déduire les labels des données non labelisées à partir de ce premier dataset, et par itération de disposer d’un réseau calibré</p>
+<p>L” <em>« apprentissage non supervisé »</em> consiste à travailler à partir de données non labelisées.</p>
+<ul class="simple">
+<li><p>On peut par exemple donner un jeu de données contenant des chats et des chiens sans les labeliser et faire déduire les critères au réseau de neurones. On parle alors de clustering.</p></li>
+<li><p>On peut aussi automatiser la réduction du nombre de dimensions sur un jeu de données.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Les apprentissages supervisé et auto supervisé semble être les méthodes les plus utilisées. Le non supervisé est lui utilisé quand il est complexe de disposer de données labelisées.</p>
+</div>
+<p>L” <em>« apprentissage par renforcement »</em> consiste à laisser l’IA interagir avec son environnement et programmer un certain nombre de récompenses pour calibrer le réseau.</p>
+<p>Le <em>« transfert learning »</em> consiste à partir d’une compétence donnée acquise afin de faire acquérir au réseau une compétence complémentaire.</p>
+</section>
+<section id="outils">
+<h3>Outils<a class="headerlink" href="#outils" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="../_images/Outils.png"><img alt="Outils" src="../_images/Outils.png" style="width: 400px;" /></a>
+</section>
+</section>
+<section id="de-la-regression-lineaire-au-neurone-artificielle">
+<h2>De la régression linéaire au neurone artificielle<a class="headerlink" href="#de-la-regression-lineaire-au-neurone-artificielle" title="Link to this heading"></a></h2>
+<section id="complexite-de-la-regression-lineaire-et-approche-iterative">
+<h3>Complexité de la régression linéaire et approche itérative<a class="headerlink" href="#complexite-de-la-regression-lineaire-et-approche-iterative" title="Link to this heading"></a></h3>
+<p>Est possible de trouver les paramètres d’une régression linéaire directement via un formule fermée.</p>
+<p>La complexité de cette opération est en n cube, ce qui fait que cette méthode est peu optimale sur un très grand nombre de points.</p>
+<a class="reference internal image-reference" href="../_images/LinearRegression.png"><img alt="Regression linéaire" src="../_images/LinearRegression.png" style="width: 400px;" /></a>
+<p>Est ainsi possible de procéder par un processus d’optimisation par itération, pour chaque itération de calculer l’erreur via le calcul de l’erreur quadratique moyenne (Root Mean Squared Error) ou la moyenne du carré des erreurs (Mean Squared Error).</p>
+<p>L’objectif est donc de minimiser la fonction d’erreur (la loss) en raisonnant par gradient.</p>
+<p>Il existe plusieurs algorithmes pour minimiser de la manière la plus efficiente possible, qui peut dépendre du contexte.</p>
+<a class="reference internal image-reference" href="../_images/GradientDescend.png"><img alt="Regression linéaire" src="../_images/GradientDescend.png" style="width: 400px;" /></a>
+</section>
+<section id="regression-polynomiale-underfitting-et-overfitting">
+<h3>Régression polynomiale, underfitting et overfitting<a class="headerlink" href="#regression-polynomiale-underfitting-et-overfitting" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="../_images/PolynomialRegression.png"><img alt="Regression polynomiale" src="../_images/PolynomialRegression.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/UnderOverFitting.png"><img alt="Underfitting &amp; overfitting" src="../_images/UnderOverFitting.png" style="width: 400px;" /></a>
+</section>
+<section id="neurone-artificiel">
+<h3>Neurone artificiel<a class="headerlink" href="#neurone-artificiel" title="Link to this heading"></a></h3>
+<p>Le neurone artificiel se distingue de la régression linéraire de par une fonction d’activation, mais le principe est le même quant à l’optimisation des différents poids.</p>
+<a class="reference internal image-reference" href="../_images/LogisticRegression.png"><img alt="Regression polynomiale" src="../_images/LogisticRegression.png" style="width: 400px;" /></a>
+</section>
+</section>
+<section id="histoire-de-l-intelligence-artificielle">
+<h2>Histoire de l’intelligence artificielle<a class="headerlink" href="#histoire-de-l-intelligence-artificielle" title="Link to this heading"></a></h2>
+<section id="definition-de-l-intelligence-artificielle">
+<h3>Définition de l’intelligence artificielle<a class="headerlink" href="#definition-de-l-intelligence-artificielle" title="Link to this heading"></a></h3>
+<p>Capacité de percevoir ou d’inférer l’information, et de la conserver comme une connaissance à appliquer à des comportements adaptatifs dans un environnement ou un contexte donné.</p>
+</section>
+<section id="connexionisme-vs-symbolisme">
+<h3>Connexionisme vs Symbolisme<a class="headerlink" href="#connexionisme-vs-symbolisme" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="../_images/ConnectionnismeVsSymbolisme-01.png"><img alt="ConnectionnismeVsSymbolisme-01" src="../_images/ConnectionnismeVsSymbolisme-01.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/ConnectionnismeVsSymbolisme-02.png"><img alt="ConnectionnismeVsSymbolisme-02" src="../_images/ConnectionnismeVsSymbolisme-02.png" style="width: 400px;" /></a>
+</section>
+<section id="id1">
+<h3>Histoire de l’intelligence artificielle<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>Jusqu’aux années 1960, les réseaux de neurones se développent via le monde académique.</p>
+<a class="reference internal image-reference" href="../_images/History-01.png"><img alt="History-01" src="../_images/History-01.png" style="width: 400px;" /></a>
+<p>En 1957, Franck Rosenblatt décrit le Perceptron qui a un neurone qui est un classifier avec une fonction d’activation particulière, et ceci sur un dataset de 1936 nommé IRIS</p>
+<a class="reference internal image-reference" href="../_images/History-03.png"><img alt="History-03" src="../_images/History-03.png" style="width: 400px;" /></a>
+<p>Différentes équipes continuent à travailler malgré tout sur ces thématiques, mais les systèmes experts deviennent majoritaires.</p>
+<a class="reference internal image-reference" href="../_images/History-04.png"><img alt="History-04" src="../_images/History-04.png" style="width: 400px;" /></a>
+<p>Rumelhart apporte en 1986 la capacité de calculer par rétropropagation les poids de l’ensemble des neurones dans un DNN.</p>
+<a class="reference internal image-reference" href="../_images/History-05-DNN.png"><img alt="History-05-DNN" src="../_images/History-05-DNN.png" style="width: 400px;" /></a>
+<p>Dans les années 90, de nouveaux algorithmes d’optimisation voient le jour.</p>
+<a class="reference internal image-reference" href="../_images/History-06.png"><img alt="History-06" src="../_images/History-06.png" style="width: 400px;" /></a>
+<p>En 2012, AlexNet surclasse une compétition de classification d’images.</p>
+<a class="reference internal image-reference" href="../_images/History-07.png"><img alt="History-07" src="../_images/History-07.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/History-09.png"><img alt="History-09" src="../_images/History-09.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="01-ConceptsFondamentaux/History-10.png"><img alt="History-09" src="01-ConceptsFondamentaux/History-10.png" style="width: 400px;" /></a>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Formation IA Fidle CNRS !" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="../02-Donnees/02-Donnees.html" class="btn btn-neutral float-right" title="L’enfer des données, des modèles et des représentations…" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur Lionel Aldebert.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
